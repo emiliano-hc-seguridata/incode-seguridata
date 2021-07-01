@@ -1,0 +1,41 @@
+{
+  "expo": {
+    "entryPoint": "./src/App.js",
+    "name": "CONCRAD E-Commerce",
+    "description": "CONCRAD E-Commerce",
+    "slug": "ECommerce",
+    "privacy": "public",
+    "platforms": [
+      "ios",
+      "android",
+      "web"
+    ],
+    "version": "1.0.0",
+    "androidStatusBar": {
+      "backgroundColor": "#002530",
+      "barStyle": "light-content"
+    },
+    "icon": "./src/assets/icon/logo.png",
+    "android": {
+      "package": "concrad.com",
+      "icon": "./src/assets/icon/logo.png",
+      "versionCode":2
+    },
+    "orientation": "portrait",
+    "splash": {
+      "image": "./src/assets/icon/logo.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#002530"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "icon":  "./src/assets/icon/logo.png",
+      "bundleIdentifier": "CONCRAD"
+    }
+  }
+}
