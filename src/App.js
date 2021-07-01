@@ -1,8 +1,6 @@
-import logo from './logo.svg';
-import './App.css';
+/*import logo from './logo.svg';
 import { useEffect, useRef, useState } from "react";
 import Steps from "./Steps";
-import "./styles.css";
 import incode from "./incode";
 
 function TutorialFrontId({ token, onSuccess }) {
@@ -135,4 +133,18 @@ export default function App() {
     </Steps>
   );
 }
+*/
 
+
+import React from 'react';
+import { registerRootComponent } from 'expo';
+import Routes from './components/Routes';
+
+
+function App() {
+  return (
+        <Routes/>  
+  );
+}
+
+export default registerRootComponent(App);
