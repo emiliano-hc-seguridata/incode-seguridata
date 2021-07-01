@@ -1,9 +1,9 @@
 {
   "expo": {
     "entryPoint": "./src/App.js",
-    "name": "CONCRAD E-Commerce",
-    "description": "CONCRAD E-Commerce",
-    "slug": "ECommerce",
+    "name": "Seguridata",
+    "description": "Seguridata",
+    "slug": "Seguridata",
     "privacy": "public",
     "platforms": [
       "ios",
@@ -17,7 +17,7 @@
     },
     "icon": "./src/assets/icon/logo.png",
     "android": {
-      "package": "concrad.com",
+      "package": "seguridata.com",
       "icon": "./src/assets/icon/logo.png",
       "versionCode":2
     },
@@ -35,7 +35,7 @@
     ],
     "ios": {
       "icon":  "./src/assets/icon/logo.png",
-      "bundleIdentifier": "CONCRAD"
+      "bundleIdentifier": "Seguridata"
     }
   }
 }
