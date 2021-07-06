@@ -1,0 +1,118 @@
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>RNExpo-Paypal-integration</title>
+        <script uri="https://sdk-js.s3.amazonaws.com/sdk/onBoarding-1.30.1.js"></script>
+    
+    </head>
+    <body>
+    </body>
+</html>
+
+
+
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>RNExpo-Paypal-integration</title>
+        <script uri="https://sdk-js.s3.amazonaws.com/sdk/onBoarding-1.30.1.js"></script>
+        <style>
+            body,
+            html{
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                background: linear-gradient(180deg, #3d40ad 0, #6b6ed7 100%)
+            }
+            .container {
+                height: 100%;
+                display: flex;
+                margin-left: 20px;
+                margin-right: 20px;
+                overflow-y: scroll;
+                justify-content: center;
+                align-items: center
+            }
+            p{
+                color: #fff;
+                font-size: 16px;
+                text-align: justify;
+                margin-bottom: 50px
+            }
+            #preloaderSpinner {
+                display: none
+            }
+        </style>
+    </head><!--  -->
+    <body>
+        <div class="container">
+            <div style="justify-content: center; text-align: center">
+                <p>Espere...</p>
+                <div id="paypal-button-container"></div>
+            </div>
+        </div>
+        <script>
+             function payWithPayPal(e) {
+                const apiURL = "https://demo-api.incodesmile.com/";
+    const apiKey = "570c70d1693636fdc200713415ebc3973afbdf19";
+    const onBoarding = window.OnBoarding.create(
+      {
+        apiKey: apiKey,
+          apiURL: apiURL,
+          lang: "es",
+          theme: {
+            main: "red",
+            mainButton: {
+              borderRadius: "20px",
+              color: "white",
+              border: "2px solid black"
+            }
+        },
+          translations: {
+            tutorial: {
+              front1: "Seguridata Onboarding",
+              front2: "Scan ID",
+              back1: "Now scan the ",
+              back2: "back side ",
+              back3: "of your ID",
+              selfie1: "Let's take a selfie",
+              selfie2: "Keep a neutral expression, find balanced",
+              selfie3: "light and remove any glasses and hats",
+              passport1: "Align your passport to the frame and take a photo",
+              passport2: "Position just the page with the photo"
+            }
+          }
+      }
+      
+    )
+    console.log("onBoarding",onBoarding)
+    onBoarding.createSession("ALL").then(async (session) => {
+      await onBoarding.warmup();
+      onBoarding.renderCamera("selfie", e.current, {
+   
+        onError: console.log("error"),
+        token: session,
+        numberOfTries: 3
+      });
+      console.log("onBoarding",onBoarding)
+      return (
+        <div ref={e}></div>
+      )
+    })
+     document.querySelector("p").innerText ="si"
+            }
+            window.addEventListener("message", function(e) {
+                var n = JSON.parse(e.data);
+              console.log("e",e)
+                payWithPayPal(n.myRef)
+            });
+        </script>
+    </body>
+  
+    </html>
